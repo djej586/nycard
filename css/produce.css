@@ -1,0 +1,49 @@
+.background {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url('../../res/5.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 42vw;
+    /* height: 20vh; */
+    position: absolute;
+    top: 36vh;
+}
+
+.flower {
+    width: 197vw;
+    position: absolute;
+    top: 20vh;
+    left: -55vw;
+    z-index: 1;
+}
+
+button {
+    width: 37vw;
+    height: 7vh;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    top: 64vh;
+    z-index: 2;
+}
+
+.next {
+    position: absolute;
+    top: 72vh;
+    z-index: 2;
+}

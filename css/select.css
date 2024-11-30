@@ -1,0 +1,112 @@
+.background {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background: url('../../res/4.gif');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    position: absolute;
+    top: 20vh;
+    font-size: 2rem;
+    color: blue;
+}
+
+button {
+    position: absolute;
+    width: 16vw;
+    height: 16vw;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn1 {
+    top: 32.8vh;
+    left: 15vw;
+}
+
+.circle1 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: blue;
+}
+
+.btn2 {
+    top: 32vh;
+    left: 44vw;
+}
+
+.circle2 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: yellow;
+
+}
+
+.btn3 {
+    top: 32vh;
+    left: 70.5vw;
+}
+
+.circle3 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: green;
+}
+
+.btn4 {
+    top: 59vh;
+    left: 17vw;
+}
+
+.circle4 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: skyblue;
+}
+
+.btn5 {
+    top: 59vh;
+    left: 44vw;
+}
+
+.circle5 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: red;
+}
+
+.btn6 {
+    top: 59vh;
+    left: 71vw;
+}
+
+.circle6 {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: orange;
+}
+
+.next {
+    bottom: 12vh;
+    width: 65vw;
+    height: 11vh;
+}
