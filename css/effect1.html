@@ -3,35 +3,59 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>金粉特效</title>  
+    <title>飘动金粉特效</title>  
     <style>  
         body {  
             margin: 0;  
             height: 100vh;  
-            display: flex;  
-            justify-content: center;  
-            align-items: center;  
-            background: linear-gradient(135deg, #ffd700, #ffcc00);  
-            animation: glitter 2s infinite alternate; /* 添加闪烁动画 */  
+            overflow: hidden; /* 隐藏溢出内容 */  
+            background-color: #c61c24; /* 红色背景 */  
+            position: relative;  
         }  
 
-        @keyframes glitter {  
-            from {  
-                background-color: rgba(255, 215, 0, 1); /* 完全金色 */  
-            }  
-            to {  
-                background-color: rgba(255, 215, 0, 0.8); /* 透明度降低 */  
-            }  
+        .spark {  
+            position: absolute;  
+            background-color: #ffd700; /* 金色 */  
+            opacity: 0.8;  
+            border-radius: 50%; /* 圆形金粉 */  
+            animation: float 5s infinite; /* 漂浮动画 */  
         }  
 
-        .text {  
-            color: white;  
-            font-size: 3em;  
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);  
+        @keyframes float {  
+            0% {  
+                transform: translateY(0) scale(1);  
+                opacity: 0.8;  
+            }  
+            50% {  
+                transform: translateY(-100px) scale(1.2); /* 向上漂浮并放大 */  
+                opacity: 1;  
+            }  
+            100% {  
+                transform: translateY(0) scale(1);  
+                opacity: 0; /* 渐隐 */  
+            }  
         }  
     </style>  
 </head>  
 <body>  
-    <div class="text">欢迎来到金色世界</div>  
+    <script>  
+        // 创建金粉元素函数  
+        function createSpark() {  
+            const spark = document.createElement('div');  
+            const size = Math.random() * 10 + 5; // 随机大小，范围 5-15px  
+            spark.className = 'spark';  
+            spark.style.width = `${size}px`;  
+            spark.style.height = `${size}px`;  
+            spark.style.left = `${Math.random() * 100}vw`; // 随机水平位置  
+            spark.style.top = `${Math.random() * 100}vh`; // 随机垂直位置  
+            spark.style.animationDelay = `${Math.random() * 5}s`; // 随机动画延迟  
+            document.body.appendChild(spark);  
+        }  
+
+        // 创建足够数量的金粉元素以覆盖整个页面  
+        for (let i = 0; i < 100; i++) {  
+            createSpark();  
+        }  
+    </script>  
 </body>  
 </html>
