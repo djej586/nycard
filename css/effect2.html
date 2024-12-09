@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>动态彩带喷射效果</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            overflow: hidden; /* 隐藏溢出内容 */  
+            background-color: white; /* 背景色 */  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh; /* 满屏高度 */  
+        }  
+
+        .container {  
+            position: relative;  
+            width: 100px; /* 占据全宽 */  
+            height: 100px; /* 占据全高 */  
+        }  
+
+        .ribbon {  
+            position: absolute;  
+            width:5px; /* 初始宽度，可以根据需要调整 */  
+            opacity: 0.8;  
+            height: 100px; /* 彩带高度 */  
+            background: linear-gradient(to bottom, rgba(255, 0, 0, 0.6), rgba(0, 255, 255, 0.6)); /* 彩带颜色 */  
+            border-radius: 20px; /* 圆角效果 */  
+            animation: shoot 1s infinite; /* 动画效果 */  
+        }  
+
+        @keyframes shoot {  
+            0% {  
+                transform: translateY(0) scaleY(1); /* 初始状态 */  
+                opacity: 1;  
+            }  
+            50% {  
+                transform: translateY(-150px) scaleY(0.5); /* 向上喷射并变细 */  
+                opacity: 0.8;  
+            }  
+            100% {  
+                opacity: 0; /* 渐隐效果 */  
+                transform: translateY(100vh) scaleY(0); /* 向下消失 */  
+            }  
+        }  
+
+        /* 从左下角的彩带 */   
+        .ribbon:nth-child(1) {   
+            left: 10%;   
+            bottom: 0;   
+            background: linear-gradient(to right, #FF5733, #FF3333); /* 红色 */  
+            animation-delay: 0s;   
+        }  
+        .ribbon:nth-child(2) {   
+            left: 15%;   
+            bottom: 0;   
+            background: linear-gradient(to right, #33FF57, #2ECC40); /* 绿色 */  
+            animation-delay: 0.2s;   
+        }  
+        .ribbon:nth-child(3) {   
+            left: 20%;   
+            bottom: 0;   
+            background: linear-gradient(to right, #3357FF, #57A0FF); /* 蓝色 */  
+            animation-delay: 0.4s;   
+        }  
+        .ribbon:nth-child(4) {   
+            left: 25%;   
+            bottom: 0;   
+            background: linear-gradient(to right, #FF33B5, #FF66B3); /* 粉色 */  
+            animation-delay: 0.6s;   
+        }  
+        .ribbon:nth-child(5) {   
+            left: 30%;  
+            bottom: 0;   
+            background: linear-gradient(to right, #FFCC00, #FFD700); /* 黄色 */  
+            animation-delay: 0.8s;    
+        }  
+
+        /* 从右下角的彩带 */  
+        .ribbon:nth-child(n+6) {  
+            right: 10%;   
+            bottom: 0;  
+        }  
+        .ribbon:nth-child(n+6):nth-of-type(1) {  
+            background: linear-gradient(to right, #FF5733, #FF3333); /* 红色 */  
+            animation-delay: 0s;   
+        }  
+        .ribbon:nth-child(n+6):nth-of-type(2) {  
+            background: linear-gradient(to right, #33FF57, #2ECC40); /* 绿色 */  
+            animation-delay: 0.2s;   
+        }  
+        .ribbon:nth-child(n+6):nth-of-type(3) {  
+            background: linear-gradient(to right, #3357FF, #57A0FF); /* 蓝色 */  
+            animation-delay: 0.4s;   
+        }  
+        .ribbon:nth-child(n+6):nth-of-type(4) {  
+            background: linear-gradient(to right, #FF33B5, #FF66B3); /* 粉色 */  
+            animation-delay: 0.6s;   
+        }  
+        .ribbon:nth-child(n+6):nth-of-type(5) {  
+            background: linear-gradient(to right, #FFCC00, #FFD700); /* 黄色 */  
+            animation-delay: 0.8s;    
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <div class="container">  
+        <!-- 生成彩带元素 -->  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+        <div class="ribbon"></div>  
+    </div>  
+
+</body>  
+</html>
