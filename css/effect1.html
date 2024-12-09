@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>金粉特效</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            height: 100vh;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            background: linear-gradient(135deg, #ffd700, #ffcc00);  
+            animation: glitter 2s infinite alternate; /* 添加闪烁动画 */  
+        }  
+
+        @keyframes glitter {  
+            from {  
+                background-color: rgba(255, 215, 0, 1); /* 完全金色 */  
+            }  
+            to {  
+                background-color: rgba(255, 215, 0, 0.8); /* 透明度降低 */  
+            }  
+        }  
+
+        .text {  
+            color: white;  
+            font-size: 3em;  
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="text">欢迎来到金色世界</div>  
+</body>  
+</html>
