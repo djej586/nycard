@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年贺卡边框选择</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page" id="page2">
+            <div class="content">
+                <div class="card">
+                    <img src="res/border2.png" alt="贺卡背景" class="background-img">
+                    <img id="selected-border" src="res/border2.png" alt="选择的边框" class="border-img">
+                </div>
+                <div class="frame-selector">
+                    <img src="res/border1.png" alt="border1" onclick="selectFrame('border1')" class="border-preview">
+                    <img src="res/border2.png" alt="border2" onclick="selectFrame('border2')" class="border-preview">
+                    <img src="res/border3.png" alt="border3" onclick="selectFrame('border3')" class="border-preview">
+                    <img src="res/border4.png" alt="border4" onclick="selectFrame('border4')" class="border-preview">
+                    <img src="res/border5.png" alt="border5" onclick="selectFrame('border5')" class="border-preview">
+                    <img src="res/border6.png" alt="border6" onclick="selectFrame('border6')" class="border-preview">
+                    <img src="res/border7.png" alt="border7" onclick="selectFrame('border7')" class="border-preview">
+                    <img src="res/border8.png" alt="border8" onclick="selectFrame('border8')" class="border-preview">
+                    <img src="res/border9.png" alt="border9" onclick="selectFrame('border9')" class="border-preview">
+                </div>
+                <p>点击选择你的心选颜色叭！<br>选好请前往下一页---</p>
+            </div>
+        </div>
+
+        <!-- <div class="page" id="page3">
+            <div class="content">
+                <h1>这是你的贺卡效果</h1>
+                <div class="card">
+                    <img src="res/border2.png" alt="贺卡背景" class="background-img">
+                    <img id="final-border" src="res/border1.png" alt="最终边框" class="border-img">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
