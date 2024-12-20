@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加载页</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .loading-container {
+      flex-direction: column;
+      display: flex;
+      text-align: center;
+    }
+    .loading-box {
+      display: flex;
+    }
+    .loading-box img {
+      width: 50px;
+      height: 50px;
+      animation: limited-spin 2s infinite alternate;
+    }
+    @keyframes limited-spin {
+      from { transform: rotate(-10deg); }
+      to { transform: rotate(10deg); }
+    }
+    .progress-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .progress-bar div {
+      height: 100%;
+      width: 0;
+      background-color: #4caf50;
+      border-radius: 10px;
+      transition: width 0.5s;
+    }
+  </style>
+</head>
+<body>
+<div class="loading-container">
+  <p>Loading...</p>
+  <div class="loading-box">
+    <img src="loading.png" alt="Loading...">
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let progress = document.getElementById('progress');
+  let width = 0;
+  const interval = setInterval(() => {
+      width++;
+      progress.style.width = width + '%';
+  }, 50);
+</script>
+</body>
+</html>
