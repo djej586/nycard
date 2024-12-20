@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #d30000;
+            color: white;
+        }
+
+        .card {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #8e0000cf;
+            overflow: hidden;
+        }
+
+     
+        /* 微博协会的logo */
+        .logo {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+
+        
+
+        .welcome-text {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            color:gold;
+            z-index: 2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+
+        }
+
+        .message-box {
+            background-color: yellow;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            z-index: 2;
+            margin-top: 80px;
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+        }
+
+        .upload-prompt {
+            position: absolute;
+            writing-mode: vertical-rl;
+            color:yellow;
+            text-orientation: upright;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            z-index: 2;
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+        }
+
+        
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        
+        .ligu {
+            position: absolute;
+            top: 36vh;
+            left: 5vw;
+            width: 100px;
+            height: 100px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        
+        <img src="./bird1.png" alt="Ligu" class="ligu">
+        <div class="welcome-text">Welcome<br>to<br>2025</div>
+        <div class="message-box">
+            新的一年又到了<br>
+            快来跟哩咕一起制作一份<br>
+            独属于你的贺卡吧~
+        </div>
+        <div class="upload-prompt">上滑开始你的贺卡创作 ⇧⇧⇧</div>
+        <div class="logo">
+            <img src="" alt="Logo">
+            <p>华工微博协会</p>
+        </div>
+    </div>
+</body>
+</html>
