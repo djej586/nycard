@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="6.css"> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <title>页面6</title>
+    <style>
+      
+</style>
+  </head>
+  <body>
+    <!-- 路径需要改变 动态路径 -->
+    <div class="container ">
+      <div class="card" id="capture">
+        <div class="border" ><!-- 这里是边框 -->
+          <img id="border"  > 
+        </div>
+        <div class="logo">
+            <img src="./wxlogo2.png" alt="Logo"  />
+        </div>
+        <div class="content"> <!-- 这里是贺卡内容 -->
+          <img src="./test.png">
+        </div>
+        <div class="up-tips-1 tips"> <!-- 这里是上方的贴纸 -->
+          <img id="tips1" 
+          />
+        </div>
+        <div class="down-tips-1 tips"> <!-- 这里是下方的贴纸 -->
+          <img id="tips2" />
+        </div>
+      </div>
+      <div class="circles">
+        <div class="circle">
+          <button class="download btn" onclick="captureWithSize()">
+            <img  src="https://img.icons8.com/dusk/64/download--v1.png" alt="download--v1"/>
+            <div class="tooltip">保存图片</div>
+          </button>
+        </div>
+        <div class="circle">
+          <button class="shareToFriend btn" onclick=shareToFriend()>
+            <img 
+              src="https://img.icons8.com/external-wanicon-flat-wanicon/64/external-friend-friendship-wanicon-flat-wanicon.png" 
+              alt="external-friend-friendship-wanicon-flat-wanicon"/>
+              <div class="tooltip">分享给朋友</div>
+          </button>
+        </div>
+        <div class="circle">
+          <button class="shareToPyq btn" onclick=shareToPyq()>
+            <img 
+             src="https://img.icons8.com/doodle/50/camera.png" 
+             alt="camera"/>
+             <div class="tooltip">分享到朋友圈</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./6.js"></script>
+     
+    
+  </body>
+</html>

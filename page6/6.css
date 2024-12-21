@@ -1,0 +1,169 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #797777;
+  }
+  /*  */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+  }
+  .card {
+    position:relative;
+  }
+  .circles {
+    display: flex;
+    justify-content: space-around;
+    width: 94%;
+    position:absolute;
+    bottom:5%;
+  }
+ /* logo：微协水印 */
+  .logo{
+   display: inline;
+   position:absolute;
+   bottom:19.4%;
+   right:14.8%;
+   padding:5px;
+   background-color:transparent;
+  }
+  .logo img{
+    width:17vh;
+    height:auto;
+    
+  }
+  .border img{
+    height:80vh;
+    width:auto;
+    
+  }
+  /* 三个按钮的逻辑 */
+  button {
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 7vh; 
+    height: 7vh; 
+    cursor: pointer; 
+    box-shadow: 0 1vh 1.5vh rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+    
+  }
+  /* 悬停 */
+  button:hover {
+    background-color: #45a049; 
+    transform: scale(1.1); 
+    animation: none;
+  }
+  /* 点击 */
+  button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2); 
+  }
+
+  button img {
+    max-width: 70%; 
+    max-height: 70%; 
+    object-fit: contain; 
+  }
+
+  .download {
+    background-color: #008CBA; 
+  }
+
+  .shareToPyq {
+    background-color: #FF9800; 
+  }
+
+  .btn {
+    margin: 1.5vh; 
+  }
+
+  .content{
+    position:absolute;
+    top:4%;
+    left:-19.5%;
+    
+  }
+  .content img{
+    height:57vh;
+    width:auto;
+  }
+  /* 这里是按钮悬停小提示的css */
+  .tooltip {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #fff; 
+    text-align: center; 
+    padding: 0.5vh 1vh; 
+    border-radius: 0.5vh; 
+    position: absolute; 
+    bottom: 110%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+    z-index: 10; 
+    font-size: 1.5vh; 
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+    opacity: 0; 
+  }
+
+  button:hover .tooltip {
+    visibility: visible; 
+    opacity: 1; 
+  }
+
+  /*彩带css*/
+  .confetti {
+  position: fixed;
+  width: 1vh;
+  height: 5vh;
+  background-color: red;
+  opacity: 0.8;
+  border-radius: 5px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* 贴纸的css 注：应该用户可以高度自定义(js)*/
+.up-tips-1{
+  display:inline-block;
+  position:absolute;
+  top:8%;
+  right:12%
+}
+.up-tips-1 img{
+  width:13vh;
+  height:auto;
+  transform:  rotate(-25deg) scaleX(-1);/* 该旋转角度应该可被用户自定义 */
+}
+.down-tips-1{
+  display:inline-block;
+  position:absolute;
+  bottom:22%;
+  left:10%;
+}
+.down-tips-1 img{
+  width:13vh;
+  height:auto;
+  transform:  rotate(-16deg) scaleX(-1);/* 该旋转角度应该可被用户自定义 */
+}
