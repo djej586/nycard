@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 使内容从顶部开始对齐 */
+            height: 100vh; /* 使页面高度为视口高度 */
+            margin: 0;
+            background-color: #f0f0f0; /* 背景颜色 */
+        }
+		.add{font-size:20px;color:gray;  cursor:pointer;}
+		.text{font-size:20px;color:gray; center; cursor:pointer;}
+		.sticker-container{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center; /* 垂直居中 */
+			width: 80%; /* 边框宽度 */
+			height: 72%; /* 边框高度 */
+			background-color: white; /* 背景颜色 */
+			padding: 20px; /* 内边距 */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+			position: relative; /* 使其相对于父容器定位 */
+			cursor: pointer; /* 鼠标悬停时显示手型光标 */
+		}
+		.sticker-Image{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center; 
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:50%;left:50%;
+			transform:translate(-50%,-50%);
+		}
+		
+        .image-container {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center; /* 垂直居中 */
+             width: 57%; /* 边框宽度 */
+             height: 52%; /* 边框高度 */
+			 border-color: gray;
+             padding: 0px; /* 内边距 */
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+             position: absolute; /* 使其相对于父容器定位 */
+			 cursor: pointer; /* 鼠标悬停时显示手型光标 */
+			top:40.5%;left:49%;
+            transform:translate(-50%,-50%);
+        }
+		
+        .image-item {
+			position:relative;
+            width: 100%; /* 图片宽度 */
+            height: 100%; /* 图片高度 */
+			object-fit: cover; /* 保持图片比例 */
+			overflow: hidden;
+			display:none;
+        }/*图片显示框*/
+		.textblock{
+			position:absolute;
+			width:100%;
+			height:100%;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			text-align: center;
+		}/*文字内容框*/
+		
+		/* 新增的文本框样式 */
+		.textbox-container {
+		    bottom: 25%;
+		    right: 20%; 
+		    width: 60%;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    position: absolute;
+		}	
+		.textbox {
+			position: relative;
+		    width: 100%;
+		    padding: 10px;
+		    font-size: 14px;
+			font-weight: bold;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+			text-align: center;
+			background-color: rgba(255, 255, 255, 0.8); 
+		}	
+		.quick-options {
+			position: absolute;
+		    display: none;
+			top: 100%; /* 将快捷选项定位在文本框下方 */
+			margin-top: 5px; /* 增加间隔，避免与文本框紧贴 */
+		    width: 100%;
+		    background-color: white;
+		    border: 1px solid #ddd;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		    border-radius: 4px;
+		    padding: 10px;
+		    text-align: center;
+			z-index: 2;
+		}	
+		.quick-option {
+		    padding: 8px;
+		    margin: 5px 0;
+		    background-color: #f1f1f1;
+		    cursor: pointer;
+		    border-radius: 4px;
+			font-size: 12px;
+		}	
+		.quick-option:hover {
+		    background-color: #ddd;
+		}	
+		
+		 /* 色块图标的样式 */
+		.color-picker-container {
+			position: absolute;
+			bottom: 21%;
+			right: 20%; 
+			width: 60%;
+		    display: flex;
+		    justify-content: center;
+		    margin-top: 10px;
+			z-index: 1;
+		}
+				
+		.color-picker {
+		    width: 15px;
+		    height: 15px;
+		    margin: 0 5px;
+		    cursor: pointer;
+		    border-radius: 50%;
+		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+				
+		.color-picker:hover {
+		    opacity: 0.8;
+		}
+
+    </style>
+</head>
+
+<body>
+	
+	<div class="sticker-containner" >
+		<img src="E:\设计组新年贺卡\边框\34df675beb98e9a08dd32bb2db91458.png"class="sticker-Image" >
+	
+		<div class="image-container" id="imageContainer">
+			<div class="textblock">
+				<div class="add">+</div>
+				<div class="text">选择图片</div>
+			</div>
+			<img src=" "id="imagePreview" class="image-item"  />
+			<input type="file"  id="fileInput" accept="image/*" style="display: none;" >
+		</div>
+		
+		 <!-- 新增的文本框 -->
+		<div class="textbox-container">
+		    <input type="text" class="textbox" id="textBox" placeholder="点击输入文本或选择快捷输入" />
+		    <div class="quick-options" id="quickOptions">
+		        <div class="quick-option" id="option1">新的一年，我们一起“新”动出发~</div>
+		        <div class="quick-option" id="option2">新年快乐，年年开心！(●'◡'●)</div>
+		    </div>
+		</div>
+		
+		<!-- 色块图标 -->
+		<div class="color-picker-container" id="colorPickerContainer">
+		    <div class="color-picker" id="colorRed" style="background-color: #000000;"></div>
+		    <div class="color-picker" id="colorGreen" style="background-color: #FFFFFF;"></div>
+		    <div class="color-picker" id="colorBlue" style="background-color: #FFEBBD;"></div>
+		    <div class="color-picker" id="colorYellow" style="background-color: #668032;"></div>
+		    <div class="color-picker" id="colorPink" style="background-color: #FFA5A0;"></div>
+			<div class="color-picker" id="colorYellow" style="background-color: #AD99C6;"></div>
+			<div class="color-picker" id="colorYellow" style="background-color: #87FAC8;"></div>
+		</div>
+	
+    </div>
+
+    <script>
+        const imageContainer = document.getElementById('imageContainer');
+		const fileInput = document.getElementById('fileInput');
+		const imagePreview = document.getElementById('imagePreview');
+        
+		// 点击边框时触发文件选择
+		 imageContainer.addEventListener('click', function() {
+		    fileInput.click();
+		});
+				
+		 // 选择文件后显示图片
+		fileInput.onchange=function(){
+		 imagePreview.src=URL.createObjectURL(fileInput.files[0])
+		 imagePreview.style.display = 'block'; // 显示图片
+		}
+		
+		// 文本框和快捷选项部分
+		const textBox = document.getElementById('textBox');
+		const quickOptions = document.getElementById('quickOptions');
+		const option1 = document.getElementById('option1');
+		const option2 = document.getElementById('option2');
+		const colorPickerContainer = document.getElementById('colorPickerContainer');
+				
+		// 当点击文本框时，显示快捷选项
+		textBox.addEventListener('click', function (event) {
+			event.stopPropagation();  // 阻止事件冒泡
+		    quickOptions.style.display = 'block'; // 显示快捷选项
+			// 恢复文本框样式
+			textBox.style.border = '1px solid #ccc';
+			textBox.style.background = 'rgba(255, 255, 255, 0.8)';
+		});
+		
+		// 当文本框有输入时，隐藏快捷选项
+		textBox.addEventListener('input', function () {
+		    if (textBox.value.trim() !== '') {  // 如果文本框有内容
+		        quickOptions.style.display = 'none'; // 隐藏快捷选项
+		    }
+		});
+				
+		// 点击快捷选项时，将其设置为文本框的值，并隐藏选项
+		option1.addEventListener('click', function () {
+		    textBox.value = "新的一年，我们一起“新”动出发~";
+		    quickOptions.style.display = 'none'; // 隐藏选项
+		});
+				
+		option2.addEventListener('click', function () {
+		    textBox.value = "新年快乐，年年开心！(●'◡'●)";
+		    quickOptions.style.display = 'none'; // 隐藏选项
+		});
+				
+		// 如果点击页面的其他地方，隐藏快捷选项
+		document.addEventListener('click', function (event) {
+		    if (!textBox.contains(event.target) && !quickOptions.contains(event.target)) {
+		        quickOptions.style.display = 'none'; // 隐藏选项
+				// 检查文本框内容并隐藏样式
+				if (textBox.value.trim() !== '') {
+				    textBox.style.border = 'none';
+				    textBox.style.background = 'transparent';
+				}
+		    }
+		});
+		
+		// 如果文本框为空，恢复样式
+		textBox.addEventListener('focus', function () {
+		    if (textBox.value.trim() === '') {
+		        textBox.style.border = '1px solid #ccc';
+		        textBox.style.background = 'rgba(255, 255, 255, 0.8)';
+		    }
+		});
+
+		 // 色块点击事件
+		const colorPickers = document.querySelectorAll('.color-picker');
+				
+		colorPickers.forEach(picker => {
+		    picker.addEventListener('click', function () {
+		        if (textBox.value.trim() !== '') {  // 如果文本框有内容
+		            textBox.style.color = this.style.backgroundColor; // 修改文本框文字颜色
+		        }
+		    });
+		});
+		
+
+    </script>
+</body>
+</html>
